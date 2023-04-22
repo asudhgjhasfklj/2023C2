@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+int main() {
+   char *fruits[] = {"Apple", "Banana", "Kiwi", "Peach", "Orange"};
+   char guess_fruit[20];
+   int random_num;
+   srand(time(NULL));
+   random_num = rand() % 5;
+   printf("(Apple, Banana, Kiwi, Peach, Orange)\n");
+   printf("The computer has selected fruit. Please enter one of the five fruits: ");
+   while(1){
+   scanf("%s", guess_fruit);
+   if (strcmp(guess_fruit, fruits[random_num]) == 0) {
+      printf("Correct! The computer selected fruit is %s.\n", fruits[random_num]);
+   } else {
+      printf("Wrong! Choose another fruits.\n");
+   }}
+   return 0;
+}
